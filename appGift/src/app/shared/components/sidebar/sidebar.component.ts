@@ -17,14 +17,8 @@ export class SidebarComponent implements OnInit {
     return this.GifsService.tagsHistory;
   }
 
-  //Y ahora como necesitamos que al hacer un click haga la busqueda, también tenemos que tener acceso a esos gifs del gifs service.
-  get gifs(): Gif[] {
-    return this.GifsService.gifList;
-  }
-
-  //Metodo para ejecutar cuando pulsamos el boton
-  showGifs(tag:string) {
-    return this.GifsService.gifList;
+  searchGifs(tag: string): void {
+    this.GifsService.searchTag(tag); // Llama al método del servicio
   }
 
   ngOnInit(): void {}
