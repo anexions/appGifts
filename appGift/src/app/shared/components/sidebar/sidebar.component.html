@@ -1,7 +1,26 @@
 <div class="bg-dark border-right p-3" id="sidebar">
-  <h3 class="text-light">Gifs App</h3>
-  <hr class="text-white"/>
+  <!-- Contenedor lateral con estilos oscuros, borde y relleno -->
+  <h3 class="text-light">Buscador de Gifs</h3>
+  <!-- Título del buscador con estilo de texto claro -->
+  <hr class="text-white" />
+  <!-- Línea horizontal para separar el título del contenido -->
+
   <div class="list-group list-reset">
-    <button class="list-group-item list-group-item-action">Valoran</button>
+    <!-- Lista de botones generada dinámicamente -->
+    <button
+      *ngFor="let tag of tags"
+      class="list-group-item list-group-item-action"
+      (click)="showGifs(tag)"
+    >
+      <!-- 
+        *ngFor: Directiva estructural de Angular que recorre el array 'tags' 
+        y genera un botón por cada elemento.
+        
+        {{ tag | uppercase }}:
+        - 'tag' es el elemento actual de la lista.
+        - '| uppercase' es un pipe de Angular que convierte el texto a mayúsculas.
+      -->
+      {{ tag | titlecase }}
+    </button>
   </div>
 </div>

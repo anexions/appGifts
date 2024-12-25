@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Gif } from '../../interfaces/gifs.interface';
 
 @Component({
   selector: 'card-list-component',
@@ -8,4 +9,9 @@ export class CardListComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  //Este input se lo vamos a mandar al home-page.component
+  @Input()
+  public gifsList: Gif[] = [];
+
 }
